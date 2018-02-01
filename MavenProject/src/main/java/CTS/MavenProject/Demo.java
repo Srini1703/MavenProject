@@ -7,6 +7,6 @@ public class Demo {
 	@Test
 	public void MyTest() throws Exception
 	{
-		System.out.println("Maven Project i Installed");
+		System.out.println("Maven Project i Installed :)");
 	}
 }
