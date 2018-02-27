@@ -36,7 +36,7 @@ public class ExtentReport
 		driver.get("https://www.google.co.in/");
 		driver.manage().window().maximize();
 		File screenshot = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		File imagePath = new File("Screenshots"+"/"+"Screenshot1.png");
+		File imagePath = new File("./Screenshots"+"/"+"Screenshot1.png");
 		FileUtils.copyFile(screenshot, imagePath);
 		r1.reportPass("Icon Google", imagePath, logger);
 	}
