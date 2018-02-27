@@ -47,7 +47,7 @@ public class Reporting {
 				"<font color ='blue'><b>Expected - </font></b>"+desc+" Should be available"+"\n"+"<br>"+
 				"<font color ='red'><b>Failed - </font></b>"+desc+" Icon is NOT available"+"\n"+"<br>";
 		desc = desc1;
-		String temp = imagePath.getPath();
+		String temp = logger.addScreenCapture(imagePath.getAbsolutePath());
 		logger.log(LogStatus.FAIL, desc, temp);
 	}
 	
