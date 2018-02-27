@@ -3,7 +3,7 @@
 <suite name="Suite1" verbose="1" >
   <test name="Regression" >
     <classes>
-       <class name="CTS.MavenProject.Demo" />
+       <class name="CTS.MavenProject_TestCase.ExtentReport" />
     </classes>
   </test>
 </suite>
