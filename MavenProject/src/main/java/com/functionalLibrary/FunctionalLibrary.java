@@ -126,4 +126,11 @@ public class FunctionalLibrary {
 			System.out.println("ELEMENT IS NOT CLICKABLE");
 		}
 	}
+	
+	public void sendkeys(String ORkey,String data) throws Exception{
+		
+		String name = new Object(){}.getClass().getEnclosingMethod().getName();
+		WebElement ele = findWebElement(name,ORkey);
+		ele.sendKeys(data);
+	}
 }

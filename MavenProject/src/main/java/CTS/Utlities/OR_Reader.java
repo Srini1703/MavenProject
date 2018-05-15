@@ -15,6 +15,7 @@ public class OR_Reader{
 			File fil = new File("./ObjectRepositories/login.properties");
 			FileInputStream reader=new FileInputStream(fil); 
 			properties.load(reader);
+			//properties.lo
 		}
 		catch(Exception e){
 			e.printStackTrace();
