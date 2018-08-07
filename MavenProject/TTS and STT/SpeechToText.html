@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Speech to text Converter</title>
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.1/css/font-awesome.min.css"/>
+		<style type="text/css">
+			body{
+				font-family: verdana;
+			}
+			#result{
+				height: 200px;
+				width: 500px;
+				border: 1px solid #ccc;
+				padding: 10px;
+				box-shadow: 0 0 10px 0#bbb;
+				margin-bottom: 30px;
+				font-size: 14px;
+				line-height: 25px;
+			}
+			button{
+				font-size: 20px;
+				position: absolute;
+				top: 240px;
+				right: 20%
+			}
+		</style>
+	</head>
+	<body>
+		
+		<h4  style="padding-left:70px; text-align:right"> Speech to text converter in JS</h4>
+		<div style="float:right;" id="result"></div>
+		<button onclick="startConvert();"><i class="fa fa-microphone"></i></button>
+		<script type="text/javascript">
+			var r = document.getElementById('result');
+			
+			function startConvert(){
+				if('webkitSpeechRecognition' in window){
+					var speechReognizer = new webkitSpeechRecognition();
+					speechReognizer.continuous = true;
+					speechReognizer.interimResults = true;
+					speechReognizer.lang = 'en-US';
+					speechReognizer.start();
+					var finalTranscripts='';
+					
+					speechReognizer.onresult = function(event){
+						var interimTrans = '';
+						for(var i=event.resultIndex;i < event.results.length; i++){
+							var trans = event.results[i][0].trans;
+							trans.replace("\n","<br>");
+							if(event.results[i].isFinal){
+								finalTranscripts += trans;
+							}else{
+								interimTrans += trans;
+							}
+						}
+						r.innerHTML = finalTranscripts +'<span style="color:#999">' + interimTrans + '</span>';
+					};
+					speechReognizer.onerror = function(event){
+						
+					};
+				}else{
+					
+				}
+			}
+			
+		</script>
+		<iframe width="470" height="550" src="C:\Users\srini\eclipse-workspace\TextToSpeech\TTS_STT.html" id="TTSFrame">
+			<html>
+	<head>
+		<title>Text to Speech and Speech to Text Converter</title>
+		<style type="text/css">
+			body{
+				background: #f6f6f6;
+			}
+			.container{
+				background: #f6f6f6;
+				position: absolute;
+				top: 10%;
+				left: 5%;
+				transfrom: translateX(-50%) translateY(-50%);
+				width: 400px;
+				padding: 20px;
+				box-shadow: 0 0 10px 0 #ccc;
+			}
+			.container textarea{
+				width: 390px;
+				height: 100px;
+				resize: none;
+				outline: none;
+				border: 1px solid #ccc;
+			}
+			
+			.container label{
+				display: block;
+				width: 400px;
+			}
+			.container label span{
+				width: 100px;
+				margin-top: 20px;
+				display: inline-block;
+			}
+			.container label select, .container label input{
+				width: 290px;
+			}
+			.button{
+				display: inline-block;
+				background: #f6f6f6;
+				padding: 10px 20px;
+				color: #000;
+				border: 1px solid #ccc;
+				cursor: pointer;
+				margin-top: 20px;
+			}
+			.button:hover {
+				box-shadow: 4px 4px 10px 0 #ccc;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="container">
+		<h3>TEXT TO SPEECH</h3>
+			<textarea id="myTextArea">Please start typing the sentence here..</textarea>
+			<label>
+				<span>VOICE</span>
+				<select id="voiceOptions"></select>
+			</label>
+			<label>
+				<span>VOLUME SLIDER</span>
+				<input type="range" id="volumeSlider" min="0" max="1" value="0.8" step="0.1" />
+			</label> 
+			<label>
+				<span>RATE SLIDER</span>
+				<input type="range" id="rateSlider" min="0" max="1" value="0.8" step="0.1" />
+			</label> 
+			<label>
+				<span>PITCH SLIDER</span>
+				<input type="range" id="pitchSlider" min="0" max="2" value="1.8" step="0.1" />
+			</label> 
+			<div class="button" onclick="speak();">Speak</div>
+		</div>
+		
+		<script type="text/javascript">
+			var voiceOptions = document.getElementById('voiceOptions');
+			var volumeSlider = document.getElementById('volumeSlider');
+			var rateSlider = document.getElementById('rateSlider');
+			var pitchSlider = document.getElementById('pitchSlider');
+			var myTextArea = document.getElementById('myTextArea');
+			var voiceMap=[];
+			
+			function loadVoices(){
+				var voiceArr = speechSynthesis.getVoices();
+				for(var i=0;i < voiceArr.length;i++){
+					var voice = voiceArr[i];
+					var option = document.createElement('option');
+					option.value = voice.name;
+					option.innerHTML = voice.name;
+					voiceOptions.appendChild(option);
+					voiceMap[voice.name] = voice;
+				};
+			};
+			window.speechSynthesis.onvoiceschanged=function(e){
+				loadVoices();
+			};
+			function speak(){
+				var msg = new SpeechSynthesisUtterance();
+				msg.volume = volumeSlider.value;
+				msg.voice = voiceMap[voiceOptions.value];
+				msg.rate = rateSlider.value;
+				msg.pitch = pitchSlider.value;
+				msg.text = myTextArea.value;
+				window.speechSynthesis.speak(msg);
+			};
+			
+		</script>
+	</body>
+</html>
+		</iframe>
+	</body>
+</html>
