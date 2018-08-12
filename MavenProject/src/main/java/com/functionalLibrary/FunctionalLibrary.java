@@ -98,6 +98,17 @@ public class FunctionalLibrary {
 		return elements;
 	}
 	*/
+	
+	public void clearText(String ORkey) throws Exception {
+		String name = new Object(){}.getClass().getEnclosingMethod().getName();
+		WebElement ele = findWebElement(name,ORkey);
+		ele.clear();
+	}
+	
+	public void killSession() throws Exception {
+		driver.close();
+	}
+	
 	public boolean isDisplayed(String ORkey) throws Exception
 	{
 		String name = new Object(){}.getClass().getEnclosingMethod().getName();
@@ -132,5 +143,15 @@ public class FunctionalLibrary {
 		String name = new Object(){}.getClass().getEnclosingMethod().getName();
 		WebElement ele = findWebElement(name,ORkey);
 		ele.sendKeys(data);
+	}
+	
+	public void switchToFrame(String ORkey) throws Exception {
+		String name = new Object(){}.getClass().getEnclosingMethod().getName();
+		WebElement ele = findWebElement(name,ORkey);
+		driver.switchTo().frame(ele);
+	}
+	
+	public void switchToParentWindow() throws Exception {
+		driver.switchTo().defaultContent();
 	}
 }
