@@ -49,6 +49,7 @@ public class FunctionalLibrary {
 				       .pollingEvery(2, TimeUnit.SECONDS)
 				       .ignoring(NoSuchElementException.class)
 					   .ignoring(TimeoutException.class);
+
 			element =  fWait.until(new Function<WebDriver, WebElement>() {
 			     public WebElement apply(WebDriver driver) {
 				       return driver.findElement(By.xpath(value));

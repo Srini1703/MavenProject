@@ -49,6 +49,22 @@
     <scope>compile</scope>
 </dependency>
 
+<dependency>
+      <groupId>com.google.cloud</groupId>
+      <artifactId>google-cloud-storage</artifactId>
+      <version>1.38.0</version>
+    </dependency>
+    <dependency>
+      <groupId>com.google.auth</groupId>
+      <artifactId>google-auth-library-appengine</artifactId>
+      <version>0.10.0</version>
+</dependency>
+<dependency>
+  <groupId>com.google.cloud</groupId>
+  <artifactId>google-cloud-speech</artifactId>
+  <version>0.53.0-alpha</version>
+</dependency>
+
 <!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
 <dependency>
     <groupId>com.relevantcodes</groupId>
@@ -81,7 +97,19 @@
     <artifactId>java-client</artifactId>
     <version>6.0.0-BETA2</version>
 </dependency>
+  <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+<dependency>
+    <groupId>com.google.guava</groupId>
+    <artifactId>guava</artifactId>
+    <version>23.0</version>
+</dependency>
   
+  <!-- https://mvnrepository.com/artifact/com.googlecode.soundlibs/tritonus-share -->
+<dependency>
+    <groupId>com.googlecode.soundlibs</groupId>
+    <artifactId>tritonus-share</artifactId>
+    <version>0.3.7-1</version>
+</dependency>
   
   </dependencies>
 </project>
