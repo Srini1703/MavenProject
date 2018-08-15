@@ -6,7 +6,26 @@
   <artifactId>MavenProject</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
-
+	
+	
+  <repositories>
+        <repository>
+            <id>snapshots-repo</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        
+        <repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+        
+    </repositories>
   <name>MavenProject</name>
   <url>http://maven.apache.org</url>
 	
@@ -50,6 +69,18 @@
 </dependency>
 
 <dependency>
+  <groupId>edu.cmu.sphinx</groupId>
+  <artifactId>sphinx4-core</artifactId>
+  <version>5prealpha-SNAPSHOT</version>
+</dependency>
+
+<dependency>
+  <groupId>edu.cmu.sphinx</groupId>
+  <artifactId>sphinx4-data</artifactId>
+  <version>5prealpha-SNAPSHOT</version>
+</dependency>
+
+<dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>google-cloud-storage</artifactId>
       <version>1.38.0</version>
@@ -64,6 +95,12 @@
   <artifactId>google-cloud-speech</artifactId>
   <version>0.53.0-alpha</version>
 </dependency>
+
+<dependency>
+			<groupId>com.github.goxr3plus</groupId>
+			<artifactId>java-google-speech-api</artifactId>
+			<version>V2.1</version>
+		</dependency>
 
 <!-- https://mvnrepository.com/artifact/com.relevantcodes/extentreports -->
 <dependency>
@@ -108,7 +145,7 @@
 <dependency>
     <groupId>com.googlecode.soundlibs</groupId>
     <artifactId>tritonus-share</artifactId>
-    <version>0.3.7-1</version>
+    <version>0.3.7.4</version>
 </dependency>
   
   </dependencies>

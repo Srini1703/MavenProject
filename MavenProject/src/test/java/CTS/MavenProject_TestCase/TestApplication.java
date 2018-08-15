@@ -15,6 +15,14 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStream;
+
+import edu.cmu.sphinx.api.Configuration;
+import edu.cmu.sphinx.api.SpeechResult;
+import edu.cmu.sphinx.api.StreamSpeechRecognizer;
+
 import javax.sound.sampled.AudioFileFormat;
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
@@ -42,7 +50,24 @@ import java.io.IOException;
 public class TestApplication {
 	
 	public static void main(String... args) throws Exception {
-	
+		
+		Configuration configuration = new Configuration();
+
+        configuration.setAcousticModelPath("./resource/en-us");
+        configuration.setDictionaryPath("./resource/cmudict-en-us.dict");
+        configuration.setLanguageModelPath("./resource/en-us.lm.bin");
+        configuration.setSampleRate(44100);
+        
+
+	StreamSpeechRecognizer recognizer = new StreamSpeechRecognizer(configuration);
+	InputStream stream = new FileInputStream(new File("./STT/okaybye.wav"));
+
+        recognizer.startRecognition(stream);
+	SpeechResult result;
+        while ((result = recognizer.getResult()) != null) {
+	    System.out.format("Hypothesis: %s\n", result.getHypothesis());
+	}
+	recognizer.stopRecognition();
 		/*GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream("C:\\Program Files (x86)\\Google\\Cloud SDK\\srini17031991-stt.json"))
 		          .createScoped(Lists.newArrayList("https://www.googleapis.com/auth/cloud-platform"));
 		    Storage storage = StorageOptions.newBuilder().setCredentials(credentials).build().getService();
@@ -83,7 +108,7 @@ public class TestApplication {
 		tl.stop();tl.close();
 		System.out.println("ENDED");*/
 		
-	    try (SpeechClient speechClient = SpeechClient.create()) {
+	    /*try (SpeechClient speechClient = SpeechClient.create()) {
 
 	      // The path to the audio file to transcribe
 	      String fileName = "./STT/test.raw";
@@ -113,7 +138,7 @@ public class TestApplication {
 	        SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
 	        System.out.printf("Transcription: %s%n", alternative.getTranscript());
 	      }
-	    }
+	    }*/
 	  }
 	
 	/*
