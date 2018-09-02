@@ -32,5 +32,6 @@ public class TTS {
 	      System.out.println(ex.getMessage());
 	    }
 	  }
-
+//--USE the below LINK--
+//https://github.com/GoogleCloudPlatform/java-docs-samples/blob/master/speech/cloud-client/src/main/java/com/example/speech/Recognize.java
 }
