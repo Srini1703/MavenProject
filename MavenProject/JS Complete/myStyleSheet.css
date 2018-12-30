@@ -1,0 +1,44 @@
+body{
+	background-color:rgb(180,175,148);
+}
+.para1{
+	float:left;
+	margin-top:50px;
+	border:1px solid black;
+	width:400px;
+	margin-left:130px;
+	text-align:center;
+}
+
+.para2{
+	margin-top:50px;
+	float:right;
+	border:1px solid black;
+	width:350px;
+	text-align:center;
+	margin-right:130px;
+}
+
+#para3{
+	margin-top:50px;
+	float:left;
+	border:1px solid black;
+	width:350px;
+	cursor:pointer;
+	text-align:left-side;
+	margin-left:130px;
+}
+
+#myTable {
+	float:right;
+
+  //background-color: lightblue;
+}
+	td{
+	
+  border: 1px solid black;
+  margin-top:50px;
+  float:right;
+  width:250px;
+  margin-right:30px;
+}

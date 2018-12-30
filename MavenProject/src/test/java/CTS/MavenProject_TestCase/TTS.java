@@ -12,13 +12,14 @@ public class TTS {
 	public static void main(String[] args) {
 		 
 	    try {
-	      File file = new File("./STT/open_the_door.wav");
+	      File file = new File("./STT/okaybye.flac");
 	      AudioInputStream stream = AudioSystem.getAudioInputStream(file);
-	      byte[] data=new byte[stream.available()];
-	      System.out.println(stream.read(data));
-	      System.out.println(Arrays.toString(data));
+	     // byte[] data=new byte[stream.available()];
+	      //System.out.println(stream.read(data));
+	      //System.out.println(Arrays.toString(data));
 	      Clip clip = AudioSystem.getClip();
 	      clip.open(stream);
+	      clip.start();
 	      System.out.println(clip.getFormat());
 	      System.out.println(clip.getFrameLength());
 	      System.out.println(clip.toString());
