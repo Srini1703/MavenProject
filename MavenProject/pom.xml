@@ -65,7 +65,7 @@
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>6.10</version>
-    <scope>compile</scope>
+    <scope>test</scope>
 </dependency>
 
 <dependency>
