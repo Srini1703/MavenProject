@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import com.relevantcodes.extentreports.ExtentTest;
 
-import CTS.Utlities.Reporting;
+import MyProject.Utlities.Reporting;
 
 public class ExtentReport 
 {

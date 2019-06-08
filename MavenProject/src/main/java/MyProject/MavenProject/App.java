@@ -1,4 +1,4 @@
-package CTS.MavenProject;
+package MyProject.MavenProject;
 
 /**
  * Hello world!

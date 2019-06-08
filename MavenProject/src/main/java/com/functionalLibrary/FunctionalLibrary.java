@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.Wait;
 
 import com.google.common.base.Function;
 
-import CTS.Utlities.OR_Reader;
+import MyProject.Utlities.OR_Reader;
 
 public class FunctionalLibrary {
 	

@@ -10,6 +10,9 @@ import com.google.cloud.speech.v1p1beta1.SpeechClient;
 import com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative;
 import com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult;
 import com.google.protobuf.ByteString;
+
+import MyProject.Utlities.OR_Reader;
+
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -31,9 +34,6 @@ import javax.sound.sampled.DataLine;
 import javax.sound.sampled.TargetDataLine;
 
 import com.functionalLibrary.FunctionalLibrary;
-
-import CTS.Utlities.OR_Reader;
-
 import com.google.api.gax.paging.Page;
 import com.google.auth.appengine.AppEngineCredentials;
 import com.google.auth.oauth2.ComputeEngineCredentials;

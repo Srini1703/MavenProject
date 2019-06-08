@@ -14,7 +14,7 @@ import org.testng.annotations.Test;
 
 import com.relevantcodes.extentreports.ExtentTest;
 
-import CTS.Utlities.Reporting;
+import MyProject.Utlities.Reporting;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;

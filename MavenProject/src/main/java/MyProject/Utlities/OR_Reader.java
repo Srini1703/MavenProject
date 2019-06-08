@@ -1,4 +1,4 @@
-package CTS.Utlities;
+package MyProject.Utlities;
 
 import java.io.File;
 import java.io.FileInputStream;

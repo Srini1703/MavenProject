@@ -1,4 +1,4 @@
-package CTS.Utlities;
+package MyProject.Utlities;
 
 import java.time.Duration;
 import java.util.ArrayList;
