@@ -12,14 +12,11 @@ import java.util.HashMap;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.IOUtils;
-import org.aspectj.weaver.NewFieldTypeMunger;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-
-import CTS.MavenProject_AndroidAppium.TakeScreenshot;
 
 public class JS_Report {
 	
