@@ -24,8 +24,8 @@ public class JS_Report {
 	public static File jsonFilePath;
 	public static JSONObject timeobject = new JSONObject();
 	public static String startTime,fileName;
-	public static String JSreport = System.getProperty("user.dir")+"/JavaScriptReport";
-	public static File overAllMainReport,imagePath,myScriptPath,myCssPath,seleniumImage;
+	public static String JSreport = "./JavaScriptReport";
+	public static File overAllMainReport,imagePath,myScriptPath,myCssPath;
 	public static File currentExeutionPath;
 	public File screenshotFilePath;
 	WebDriver driver;
@@ -40,11 +40,15 @@ public class JS_Report {
 			startTime = sdf.format(date);
 			fileName = startTime.replace("/", "_").replace(":", "_").replace(",", "_");
 			currentExeutionPath = new File(JSreport+"/Execution_Report/"+fileName);
-			currentExeutionPath.mkdir();
+			currentExeutionPath.mkdirs();
 			jsonFilePath = new File(currentExeutionPath.toString()+"/JSONfolder");
 			myScriptPath = new File(currentExeutionPath.toString()+"/reportingScript.js");
 			myCssPath = new File(currentExeutionPath.toString()+"/ColorCss.css");
 			overAllMainReport = new File(currentExeutionPath.toString()+"/Report.html");
+			jsonFilePath.mkdir();
+			copyOfReportStructure(new File(JSreport+"/ColorCss.css"),myCssPath);
+			copyOfReportStructure(new File(JSreport+"/reportingScript.js"),myScriptPath);
+			copyOfReportStructure(new File(JSreport+"/Report.html"),overAllMainReport);
 			
 		}catch(Exception e) {
 			e.printStackTrace();

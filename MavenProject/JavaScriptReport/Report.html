@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="reportingScript.js"></script>
+	<link rel="stylesheet" href="ColorCss.css">
+	</head>
+	
+	<body style="background-color:rgba(210,206,200,1);">
+		<div class="overallDiv">
+			<div id="mainDiv"><br>
+				<h2 id="h2ID" onmouseover="fontColor('h2ID')" onmouseout="fontColorless('h2ID')">Selenium Automation Report</h2>
+				<img class="myCompanyLogo" src="https://media.glassdoor.com/sqll/8014/cognizant-technology-solutions-squarelogo-1533046362395.png">
+				<img class="myImage" src="https://2.bp.blogspot.com/-idwhrEvGRcM/WAhO0w9TwnI/AAAAAAAAAGU/xThZWzPBrfIiz_RbcIk4CTwrpZiVJayFgCLcB/s320/Selenium.jpg"><br>
+				<ul class="testCaseDetails">
+					<li>Total Test Cases Executed: <script>read(true,false,false,false);</script></li>
+					<li>Total Test Cases Passed: <script>read(false,true,false,false);</script></li>
+					<li>Total Test Cases Failed: <script>read(false,false,true,false);</script></li>
+					<li>Total Test Cases In-Progress: <script>read(false,false,false,true);</script></li>
+				<ul>
+				
+				<ul class="ExecutionTimeDetails">
+					<li>Execution Start Time: <script>executionDetails(true,false);</script></li>
+					<li>Execution End Time: <script>executionDetails(false,true);</script></li>
+				</ul>
+				
+				<h3 id="detailReport" onmouseover="fontColor('detailReport')" onmouseout="fontColorless('detailReport')">Detailed Automation Report:</h3>
+				<div class="tab">
+					<button class="tablinks" style="background-color:Orange;" onclick="functionality('myTable');DeleteTable();">Module</button>
+					<button class="tablinks" onclick="functionality('detailedTable')">Detailed Report</button>
+					<button class="tablinks" onclick="">Click here for Pie Chart</button>
+				</div><br>
+				<table id="myTable">
+				  <tr>
+					<td style="width:10%;text-align:center;background-color:rgba(0,140,140,0.5);">S.NO</td>
+					<td style="width:40%;text-align:center;background-color:rgba(0,140,140,0.5);">Test Case Name</td>
+					<td style="width:10%;text-align:center;background-color:rgba(0,140,140,0.5);">Browser</td>
+					<td style="width:10%;text-align:center;background-color:rgba(0,140,140,0.5);">Total Test Steps</td>
+					<td style="width:10%;text-align:center;background-color:rgba(0,140,140,0.5);">Total Passed</td>
+					<td style="width:10%;text-align:center;background-color:rgba(0,140,140,0.5);">Total Failed</td>
+					<td style="width:10%;text-align:center;background-color:rgba(0,140,140,0.5);">Status</td>
+					<script>dynamicTable();</script>
+				  </tr>
+				</table>
+				
+				<table id="detailedTable">
+				  <tr>
+					<td style="width:10%;text-align:center;background-color:rgba(0,140,140,0.5);">S.NO</td>
+					<td style="width:25%;text-align:center;background-color:rgba(0,140,140,0.5);">Description</td>
+					<td style="width:25%;text-align:center;background-color:rgba(0,140,140,0.5);">Expected Result</td>
+					<td style="width:25%;text-align:center;background-color:rgba(0,140,140,0.5);">Actual Result</td>
+					<td style="width:20%;text-align:center;background-color:rgba(0,140,140,0.5);">Step Status</td>
+					<td style="width:25%;text-align:center;background-color:rgba(0,140,140,0.5);">Screenshot</td>
+					<script>readTable();</script>
+				  </tr>
+				</table><br>
+				<div id="myModal" class="modal">
+					<span class="close">&times;</span>
+					<img class="modal-content" id="img01">
+					<div id="caption"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

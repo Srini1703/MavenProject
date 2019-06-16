@@ -1,0 +1,149 @@
+div.overallDiv{
+	background-color:rgba(210,206,200,1);
+	width: 1900px;
+	height: auto;
+	margin:0px auto;
+}
+
+#mainDiv{
+	background-color:rgba(210,206,200,1);
+}
+
+#h2ID{
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:20px;
+	border:1px solid black;
+	width:350px;
+}	
+
+input{
+	color:blue;
+	cursor:pointer;
+}
+
+ul.ExecutionTimeDetails{
+	margin-top: -120px;
+	float: right;
+	margin-right: 155px;
+	font-size: 125%;
+}
+
+ul.testCaseDetails{
+	margin-left:20px;
+	line-height:1.5em;
+	font-size: 125%;
+}
+
+/* img.myFiosLogo{
+	margin-top: -20px;
+	margin-right: 200px;
+	float:right;
+	height:50px;
+	width:50px;
+} */
+
+img.myCompanyLogo{
+	margin-top: -50px;
+	margin-left: 80px;
+	float:left;
+	height:80px;
+	width:135px;
+}
+
+img.myImage{
+	margin-right: 875px;
+	float:right;
+	height:150px;
+	width:150px;
+}
+
+#detailReport{
+	font-size: 120%;
+	text-align:center;
+	margin-left:650px;
+	font-family:Verdana;
+	width:450px;
+	table-layout:auto;
+}
+
+.tableClass{
+	float:right;
+	margin-right:200px;
+}
+
+#myTable{
+	border: 1px solid black;
+	width:1750px;
+	margin-left:-75px;
+}
+
+#detailedTable{
+	table-layout:auto;
+	border: 1px solid black;
+	width:1700px;
+	margin-left:-45px;
+	display:none;
+}
+
+td{
+	table-layout:auto;
+	word-break:break-all;
+	padding:10px;
+	border: 1px solid black;
+	border:width:20%;
+	margin-left:25px;
+	width:1800px;
+	text-align:left;
+	font-size:21px;
+}
+
+tr:hover{
+	background-color:rgba(138,138,255,0.4);
+}
+
+button.tablinks{
+	margin-left:-55px;
+	width:300px;
+	font-size:23px;
+	text-align:center;
+}
+
+.modal{
+	display:none;
+	position:fixed;
+	z-index:1;
+	padding-top:100px;
+	left:0;
+	top:0;
+	width:100%;
+	height:100%;
+	overflow:auto;
+	background-color:rgba(0,0,0);
+	background-color:rgba(0,0,0,0.7);
+}
+
+.close{
+	position:absolute;
+	top:15px;
+	right:35px;
+	color:#f1f1f1;
+	font-size:40px;
+	font-weight:bold;
+	transition:0.3s;
+}
+
+.close:hover,
+.close:focus{
+	color:#bbb;
+	text-decoration:none;
+	cursor:pointer;
+}
+
+.modal-content{
+	margin:auto;
+	display:block;
+	width:80%;
+	max-width:1800px;
+}
