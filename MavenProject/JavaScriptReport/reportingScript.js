@@ -13,7 +13,7 @@ function fontColorless(varID){
 
 function read(x,y,z,a){
 	var count=0;
-	var list=document.getElementById("li");
+	var list=document.getElementsByTagName("li");
 	$.getJSON('JSONfolder/Module.json', function(data){
 		countJson = data;
 		for(var x=0;x<countJson.length;x++){
@@ -259,8 +259,8 @@ function DeleteTable(){
 }
 
 function executionDetails(start,end){
-	var listDetails = document.getElementsByName('li');
-	$.getJSON('JSONfolder/executionTimeDetails.json',function(values){
+	var listDetails = document.getElementsByTagName('li');
+	$.getJSON('JSONfolder/executionTime.json',function(values){
 		timeJson = values;
 		if(start == true){
 			listDetails[4].innerHTML=listDetails[4].innerHTML+timeJson[0].startTime;

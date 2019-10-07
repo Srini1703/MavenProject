@@ -42,10 +42,16 @@ public class Settings_TC {
 			report = new JS_Report(driver);
 			report.report("SettingPage", data);
 			report.reportSteps("SettingPage", "Settings APP Should get launched", "Settings app is launched", "Settings app is NOT launched", "Passed");
-			
+			if(report.getStatus("SettingPage").equals("Failed"))
+				report.updateMainReport("SettingPage", "status", "Failed");
+			else
+				report.updateMainReport("SettingPage", "status", "Passed");
 			
 		}catch(Exception e) {
 			e.printStackTrace();
+		}
+		finally {
+			driver.closeApp();
 		}
 	}
 	

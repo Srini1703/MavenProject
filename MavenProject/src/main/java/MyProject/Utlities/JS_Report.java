@@ -75,6 +75,23 @@ public class JS_Report {
 		}
 	}
 	
+	public synchronized String getStatus(String testID) throws Exception{
+		JSONObject val=null;
+		try {
+			for(int i=0;i<jsonArray.length();i++) {
+				val = jsonArray.getJSONObject(i);
+				if(val.get("testcasename").toString().equals(testID)) {
+					val.get("status").toString();
+					break;
+				}
+				
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return val.get("status").toString();
+	}
+	
 	public JS_Report(WebDriver driver) throws Exception{
 		this.driver = driver;
 	}
@@ -166,7 +183,7 @@ public class JS_Report {
 		}
 	}
 	
-	synchronized void updateMainReport(String testId,String key, String value) {
+	public synchronized void updateMainReport(String testId,String key, String value) {
 		try {
 			for(int i=0;i<jsonArray.length();i++) {
 				JSONObject obj = jsonArray.getJSONObject(i);
