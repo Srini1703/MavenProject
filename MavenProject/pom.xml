@@ -65,19 +65,7 @@
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
     <version>6.10</version>
-    <scope>test</scope>
-</dependency>
-
-<dependency>
-  <groupId>edu.cmu.sphinx</groupId>
-  <artifactId>sphinx4-core</artifactId>
-  <version>5prealpha-SNAPSHOT</version>
-</dependency>
-
-<dependency>
-  <groupId>edu.cmu.sphinx</groupId>
-  <artifactId>sphinx4-data</artifactId>
-  <version>5prealpha-SNAPSHOT</version>
+    <scope>compile</scope>
 </dependency>
 
 <dependency>
@@ -144,6 +132,19 @@
     <version>23.0</version>
 </dependency>
   
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi</artifactId>
+    <version>3.17</version>
+</dependency>
+
+<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+<dependency>
+    <groupId>org.apache.poi</groupId>
+    <artifactId>poi-ooxml</artifactId>
+    <version>3.9</version>
+</dependency>
 
   
   </dependencies>
