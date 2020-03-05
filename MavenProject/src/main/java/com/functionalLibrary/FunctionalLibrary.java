@@ -1,6 +1,5 @@
 package com.functionalLibrary;
 
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
@@ -10,7 +9,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
 
 import com.google.common.base.Function;
 
@@ -155,4 +153,4 @@ public class FunctionalLibrary {
 	public void switchToParentWindow() throws Exception {
 		driver.switchTo().defaultContent();
 	}
-}
+}	
