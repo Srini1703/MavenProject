@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<script src=javaScript.js></script>
 		<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 		<link rel="stylesheet" href="myCss.css" >
@@ -10,7 +10,7 @@
 	<body style="background-color:rgba(210,206,200,1);">
 		<div class="allBody">
 			<div id="mainDiv"><br>
-				<h2 id="h2ID" onmouseover="fontColor('h2ID');" onmouseout="fontColorless('h2ID);">Automation Report</h2>
+				<h1 id="h2ID" onmouseover="fontColor('h2ID');" onmouseout="fontColorless('h2ID');">Automation Report</h2>
 				<img class="companyLogo" src="https://www.wipro.com/content/dam/nexus/en/brand/Wipro-Logo-w88X70h-Px.png">
 				<img class="projectLogo" src="">
 				<img class="seleniumImage" src="https://selenium-python.readthedocs.io/_static/logo.png"><br>
@@ -24,7 +24,7 @@
 					<li>Execution Start Time: <script>executionDetails(true,false)</script></li>
 					<li>Execution End Time: <script>executionDetails(false,true)</script></li>
 				</ul>
-				<h3 id="detailReport" onmouseover="fontColor('detailReport')" onmouseout="fontColorless('detailReport)">Execution Status</h3>
+				<h3 id="detailReport" onmouseover="fontColor('detailReport')" onmouseout="fontColorless('detailReport')">Execution Status</h3>
 				<input type="image" class="android" src="http://www.project-disco.org/wp-content/uploads/2018/04/Android-logo.jpg" width="100px" height="50px" onclick="DeleteAndroidTable();dynamicTable('android');">
 				<input type="image" class="ios" src="https://imageog.flaticon.com/icons/png/512/37/37150.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" width="100px" height="50px" onclick="DeleteAndroidTable();dynamicTable('ios');"><br><br>
 				<div class="tab">

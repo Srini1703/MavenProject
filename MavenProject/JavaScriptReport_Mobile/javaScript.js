@@ -328,13 +328,13 @@ function executionDetails(start,end){
 }
 
 function pieChartReport(){
-	var ele document.getElementById('myTable');
+	var ele =document.getElementById('myTable');
 	ele.style.display="none";
 	document.getElementsByClassName('tablinks')[0].style.backgroundColor="";
 	var ele1 = document.getElementById('detailedTable');
 	ele1.style.display="none";
 	document.getElementsByClassName('tablinks')[1].style.backgroundColor="";
-	var pieEle document.getElementById('pieChartID');
+	var pieEle =document.getElementById('pieChartID');
 	pieEle.style.backgroundColor="Orange";
 	var pie1 = document.getElementById('chartContainer');
 	pie1.style.display="block";
@@ -371,7 +371,7 @@ function pieChartReport(){
 }
 
 function iOSpieChartReport(){
-	var ele document.getElementById('myTable');
+	var ele =document.getElementById('myTable');
 	ele.style.display="none";
 	document.getElementsByClassName('tablinks')[0].style.backgroundColor="";
 	var ele1 = document.getElementById('detailedTable');
@@ -379,7 +379,7 @@ function iOSpieChartReport(){
 	var DesignTeam = document.getElementById('designTeam');
 	DesignTeam.style.display="none";
 	document.getElementsByClassName('tablinks')[1].style.backgroundColor="";
-	var pieEle document.getElementById('pieChartID');
+	var pieEle= document.getElementById('pieChartID');
 	pieEle.style.backgroundColor="Orange";
 	var pie1 = document.getElementById('chartContainer');
 	pie1.style.display="block";
