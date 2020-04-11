@@ -24,7 +24,7 @@ function createEle(){
 	newEle.style.color="blue";
 }
 
-function ready(x,y,z,a){
+function read(x,y,z,a){
 	var count=0;
 	var list = document.getElementsByTagName("li");
 	$.getJSON('JSON/TotalDetails.json',function(data){
@@ -34,12 +34,12 @@ function ready(x,y,z,a){
 			list[0].style.fontWeight='1000';
 		}
 		if(y==true){
-			list[1].innerHTML = list[1].innerHTML+data[1].OverallPassedCase;
+			list[1].innerHTML = list[1].innerHTML+data[0].OverallPassedCase;
 			list[1].style.color="green";
 			list[1].style.fontWeight='1000';
 		}
 		if(z==true){
-			list[2].innerHTML = list[2].innerHTML+data[2].OverallFailedCase;
+			list[2].innerHTML = list[2].innerHTML+data[0].OverallFailedCase;
 			list[2].style.color="red";
 			list[2].style.fontWeight='1000';
 		}
@@ -89,12 +89,12 @@ function dynamicTable(platform){
 			
 			var text1 = document.createTextNode(myJson[i].TestCaseID);
 			var text2 = document.createTextNode(myJson[i].testcasename);
-			var text3 = document.createTextNode(myJson[i].browser);
-			var text4 = document.createTextNode(myJson[i].totalsteps);
-			var text5 = document.createTextNode(myJson[i].passcount);
-			testStepPassCount = testStepPassCount+myJson[i].passcount;
-			var text6 = document.createTextNode(myJson[i].failcount);
-			testStepFailCount = testStepFailCount+myJson[i].failcount;
+			var text3 = document.createTextNode(myJson[i].platform);
+			var text4 = document.createTextNode(myJson[i].totalSteps);
+			var text5 = document.createTextNode(myJson[i].passCount);
+			testStepPassCount = testStepPassCount+myJson[i].passCount;
+			var text6 = document.createTextNode(myJson[i].failCount);
+			testStepFailCount = testStepFailCount+myJson[i].failCount;
 			var text7 = document.createTextNode(myJson[i].status);
 			
 			td1.appendChild(text1);
@@ -139,9 +139,9 @@ function functionality(fltyORdetail){
 		var pieEle = document.getElementById('pieChartID');
 		pieEle.style.backgroundColor="";
 		var pie1 = document.getElementById('chartContainer');
-		pieEle.style.display="none";
+		pie1.style.display="none";
 		var pie2 = document.getElementById('iOSchartContainer');
-		pieEle.style.display="none";
+		pie2.style.display="none";
 		var ele = document.getElementById("detailedTable");
 		ele.style.display="none";
 		var Designteam = document.getElementById("designTeam");
@@ -149,15 +149,15 @@ function functionality(fltyORdetail){
 		var ele1 = document.getElementById(fltyORdetail);
 		ele1.style.display="block";
 		var tablink = document.getElementsByClassName('tablinks')[0].style.backgroundColor="Orange";
-		var tablink1 = document.getElementsByClassName('tablinks')[1].style.backgroundColor="";
+		//var tablink1 = document.getElementsByClassName('tablinks')[1].style.backgroundColor="";
 	}
 	else if(fltyORdetail == "detailedTable"){
 		var pieEle = document.getElementById('pieChartID');
 		pieEle.style.backgroundColor="";
 		var pie1 = document.getElementById('chartContainer');
-		pieEle.style.display="none";
+		pie1.style.display="none";
 		var pie2 = document.getElementById('iOSchartContainer');
-		pieEle.style.display="none";
+		pie2.style.display="none";
 		var ele = document.getElementById("myTable");
 		ele.style.display="none";
 		var Designteam = document.getElementById("designTeam");
@@ -165,7 +165,7 @@ function functionality(fltyORdetail){
 		var ele1 = document.getElementById(fltyORdetail);
 		ele1.style.display="block";
 		var tablink = document.getElementsByClassName('tablinks')[0].style.backgroundColor="";
-		var tablink1 = document.getElementsByClassName('tablinks')[1].style.backgroundColor="Orange";
+		//var tablink1 = document.getElementsByClassName('tablinks')[1].style.backgroundColor="Orange";
 	}
 }
 
@@ -189,8 +189,8 @@ function readTable(){
 				ele1.style.display="block";
 				var DesignTeam = document.getElementById('designTeam');
 				DesignTeam.style.display="none";
-				var tablink = document.getElementsByClassName('tablinks')[0].style.backgroundColor="";
-				var tablink1 = document.getElementsByClassName('tablinks')[1].style.backgroundColor="Orange";
+				var tablink = document.getElementsByClassName('tablinks')[0].style.backgroundColor="Orange";
+				//var tablink1 = document.getElementsByClassName('tablinks')[1].style.backgroundColor="Orange";
 				var detailedTableEle = document.getElementById('detailedTable');
 				for(var q=1;q<=data.length;q++){
 					var firstRow = detailedTableEle.getElementsByTagName('tr')[0];
@@ -266,7 +266,7 @@ function readTable(){
 							var x1=null;
 							var image1 = document.createElement('img');
 							image1.setAttribute('class','Images')
-							image1.src = data[q-1].screenshot;
+							image1.src = data[q-1].Screenshot;
 							image1.style.height="100px";
 							image1.style.width="100px";
 							x1 = tr.insertCell(j);
@@ -404,10 +404,10 @@ function iOSpieChartReport(){
 				indexLabelFontSize: 14,
 				indexLabel: "{label} {y}",
 				dataPoints:[
-					{y:data[0].passedcase, label:"Passed Cases",color:"DarkGreen"},
-					{y:data[0].failedcase, label:"Failed Cases",color:"#CC1844"},
-					{y:data[0].pass, label:"Total Test Step Passed",color:"#67B01A"},
-					{y:data[0].fail, label:"Total Test Step Failed",color:"#1E90FF"},
+					{y:data[0].iOSpassedcase, label:"Passed Cases",color:"DarkGreen"},
+					{y:data[0].iOSfailedcase, label:"Failed Cases",color:"#CC1844"},
+					{y:data[0].iOSpass, label:"Total Test Step Passed",color:"#67B01A"},
+					{y:data[0].iOSfail, label:"Total Test Step Failed",color:"#1E90FF"},
 				]
 			}]
 		});

@@ -46,24 +46,25 @@ public class ReportStatus_Mobile {
 			Date date = new Date();
 			SimpleDateFormat sdf = new SimpleDateFormat("dd/MMM/yyy h:mm:ss a");
 			startTime = sdf.format(date);
+			executionPath = new File(jsReport+"/Execution_Report");
 			if(!executionPath.exists())
 				executionPath.mkdir();
 			if(System.getenv("BUILD_ID")==null)
 				fileName = startTime.replace("/", "_").replace(":", "_").replace(",", "_");
 			else
 				fileName = System.getenv("BUILD_ID");
-			currentExecutionPath = new File(jsReport+"/"+fileName);
+			currentExecutionPath = new File(jsReport+"/Execution_Report/"+fileName);
 			currentExecutionPath.mkdirs();
 			jsonFilePath = new File(currentExecutionPath.toString()+"/JSON");
 			jsonFilePath.mkdir();
-			myScriptPath = new File(currentExecutionPath.toString()+"/script.js");
+			myScriptPath = new File(currentExecutionPath.toString()+"/javaScript.js");
 			myCssPath = new File(currentExecutionPath.toString()+"/myCss.css");
-			overallMainReport = new File(currentExecutionPath.toString()+"/myHtml.html");
+			overallMainReport = new File(currentExecutionPath.toString()+"/Report.html");
 
 			try {
-				copyFileUsingStream(new File(System.getProperty("user.dir")+"/JavaScriptReport_Mobile/script.js"), myScriptPath);
+				copyFileUsingStream(new File(System.getProperty("user.dir")+"/JavaScriptReport_Mobile/javaScript.js"), myScriptPath);
 				copyFileUsingStream(new File(System.getProperty("user.dir")+"/JavaScriptReport_Mobile/myCss.css"), myCssPath);
-				copyFileUsingStream(new File(System.getProperty("user.dir")+"/JavaScriptReport_Mobile/myHtml.html"), overallMainReport);
+				copyFileUsingStream(new File(System.getProperty("user.dir")+"/JavaScriptReport_Mobile/Report.html"), overallMainReport);
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
@@ -120,7 +121,7 @@ public class ReportStatus_Mobile {
 			JSAndroidJsonObject.put("platform", browserName);
 			updateAndroidStaticArray(JSAndroidJsonObject);
 			writeAndroidReport();
-			writeReportTestCase(AndroidstepJsonArray, data.get("testid"));
+			writeReportTestCase(AndroidstepJsonArray, data.get("testId"));
 			File testFile = new File(currentExecutionPath.toString()+"/"+JSAndroidJsonObject.get("testcasename"));
 			testFile.mkdir();
 		}
@@ -131,10 +132,10 @@ public class ReportStatus_Mobile {
 			JSiOSjsonObject.put("status", "In-Progress");
 			JSiOSjsonObject.put("totalSteps", 0);
 			JSiOSjsonObject.put("platform", browserName);
-			updateAndroidStaticArray(JSiOSjsonObject);
-			writeAndroidReport();
-			writeReportTestCase(iOSstepJsonArray, data.get("testid"));
-			File testFile = new File(currentExecutionPath.toString()+"/"+JSAndroidJsonObject.get("testcasename"));
+			updateIosStaticArray(JSiOSjsonObject);
+			writeIosReport();
+			writeReportTestCase(iOSstepJsonArray, data.get("testId"));
+			File testFile = new File(currentExecutionPath.toString()+"/"+JSiOSjsonObject.get("testcasename"));
 			testFile.mkdir();
 		}
 	}
@@ -204,7 +205,7 @@ public class ReportStatus_Mobile {
 							newTime = new Date().getTime();
 							oldTime = newTime;
 							File screenshot = getFileScreenShot();
-							imagePath= new File(currentExecutionPath.toString()+"/"+AndroidjsonArray.getJSONObject(i).getDouble("testcasename")+"/"+stepJsonArray.getDouble("sno")+".png");
+							imagePath= new File(currentExecutionPath.toString()+"/"+AndroidjsonArray.getJSONObject(i).get("testcasename")+"/"+stepJsonArray.get("sno")+".png");
 							FileUtils.copyFile(screenshot, imagePath);
 							stepJsonArray.put("Screenshot", AndroidjsonArray.getJSONObject(i).get("testcasename")+"/"+stepJsonArray.get("sno")+".png");
 							jsonTestArray.put(stepJsonArray);
@@ -247,7 +248,7 @@ public class ReportStatus_Mobile {
 							newTime = new Date().getTime();
 							oldTime = newTime;
 							File screenshot = getFileScreenShot();
-							imagePath= new File(currentExecutionPath.toString()+"/"+IosjsonArray.getJSONObject(i).getDouble("testcasename")+"/"+stepJsonArray.getDouble("sno")+".png");
+							imagePath= new File(currentExecutionPath.toString()+"/"+IosjsonArray.getJSONObject(i).get("testcasename")+"/"+stepJsonArray.get("sno")+".png");
 							FileUtils.copyFile(screenshot, imagePath);
 							stepJsonArray.put("Screenshot", IosjsonArray.getJSONObject(i).get("testcasename")+"/"+stepJsonArray.get("sno")+".png");
 							jsonTestArray.put(stepJsonArray);
@@ -309,7 +310,7 @@ public class ReportStatus_Mobile {
 				}
 			}
 			writeAndroidReport();
-		}else if(testId.equals("IOS")) {
+		}else if(data.get("platform").equals("IOS")) {
 			for(int i=0;i<IosjsonArray.length();i++) {
 				JSONObject obj = IosjsonArray.getJSONObject(i);
 				if(obj.get("testcasename").equals(testId)) {
@@ -403,7 +404,7 @@ public class ReportStatus_Mobile {
 		obj.put("iOStotalcase",iOStotalcase);
 		
 		obj.put("OverallPassedCase",(AndroidPassedcase+iOSpassedcase));
-		obj.put("pasedcase",AndroidPassedcase);
+		obj.put("passedcase",AndroidPassedcase);
 		obj.put("iOSpassedcase",iOSpassedcase);
 		
 		obj.put("OverallFailedCase",(AndroidFailedcase+iOSfailedcase));
