@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,6 +32,16 @@ public class FunctionalLibrary {
 			driver = new ChromeDriver();
 			driver.manage().window().maximize();
 			driver.get(url);
+		}
+	}
+	
+	public void clickUsingJS(WebElement we) throws Exception{
+		try {
+			if(we!=null) {
+				((JavascriptExecutor)driver).executeScript("aruguments[0].click();", we);
+			}
+		}catch(Exception e) {
+			
 		}
 	}
 	
