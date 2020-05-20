@@ -10,6 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Select;
 
 import com.google.common.base.Function;
 
@@ -75,6 +76,15 @@ public class FunctionalLibrary {
 			System.out.println("Exception occured while evaluating "+value);
 		}
 		return element;
+	}
+	
+	public void selectDropDown(WebElement we) throws Exception{
+		try {
+			Select sel = new Select(we);
+			sel.selectByVisibleText("");
+		}catch(Exception e) {
+			
+		}
 	}
 	
 	/*@SuppressWarnings("unchecked")
