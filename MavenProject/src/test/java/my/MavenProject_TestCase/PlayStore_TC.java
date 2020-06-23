@@ -1,4 +1,4 @@
-package CTS.MavenProject_TestCase;
+package my.MavenProject_TestCase;
 
 import org.testng.annotations.Test;
 

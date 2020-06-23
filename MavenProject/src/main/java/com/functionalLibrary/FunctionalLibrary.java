@@ -9,6 +9,8 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Action;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 
@@ -173,5 +175,9 @@ public class FunctionalLibrary {
 	
 	public void switchToParentWindow() throws Exception {
 		driver.switchTo().defaultContent();
+	}
+	
+	public void mouseOver() throws Exception{
+		Actions a = new Actions(driver);
 	}
 }	

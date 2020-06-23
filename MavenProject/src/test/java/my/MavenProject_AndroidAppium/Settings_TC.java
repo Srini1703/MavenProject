@@ -1,4 +1,4 @@
-package CTS.MavenProject_AndroidAppium;
+package my.MavenProject_AndroidAppium;
 
 import java.net.URL;
 import java.util.HashMap;

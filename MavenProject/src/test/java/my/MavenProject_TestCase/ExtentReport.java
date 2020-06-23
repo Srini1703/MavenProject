@@ -1,4 +1,4 @@
-package CTS.MavenProject_TestCase;
+package my.MavenProject_TestCase;
 
 import java.io.File;
 

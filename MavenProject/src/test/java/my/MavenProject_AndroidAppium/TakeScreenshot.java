@@ -1,4 +1,4 @@
-package CTS.MavenProject_AndroidAppium;
+package my.MavenProject_AndroidAppium;
 
 import java.io.File;
 import java.net.URL;
@@ -60,7 +60,6 @@ public class TakeScreenshot {
 		File imagePath = new File("./Screenshots"+"/"+Screenshotname+".png");
 		FileUtils.copyFile(screenshot, imagePath);
 		return imagePath;
-		//r1.reportPass(validation, imagePath, logger);
 	}
 	
 	@AfterSuite

@@ -1,4 +1,4 @@
-package CTS.MavenProject_TestCase;
+package my.MavenProject_TestCase;
 
 import com.darkprograms.speech.recognizer.GSpeechResponseListener;
 import com.darkprograms.speech.recognizer.GoogleResponse;
