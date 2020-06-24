@@ -1,5 +1,6 @@
 package com.functionalLibrary;
 
+import java.time.Duration;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 
@@ -57,8 +58,8 @@ public class FunctionalLibrary {
 		{	
 			System.out.println("Get Element Started for the Method "+methodname+ "-- "+value);
 			FluentWait<WebDriver> fWait = new FluentWait<WebDriver>(driver)
-				       .withTimeout(10,TimeUnit.SECONDS)
-				       .pollingEvery(2, TimeUnit.SECONDS)
+					    .withTimeout(Duration.ofSeconds(10))
+				       .pollingEvery(Duration.ofMillis(500))
 				       .ignoring(NoSuchElementException.class)
 					   .ignoring(TimeoutException.class);
 

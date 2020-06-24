@@ -1,6 +1,7 @@
 package Mobile_Pages;
 
 import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -28,6 +29,7 @@ public class Demo_Mobile {
 			for(int i=1;i<=2;i++) {
 				System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
 				driver = new ChromeDriver();
+				driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 				report = new ReportStatus_Mobile(driver);
 				if(i==1) {
 					data.put("testId", "Demo Run_1");
@@ -43,7 +45,7 @@ public class Demo_Mobile {
 				driver.manage().window().maximize();
 				driver.get("https://www.google.com/");
 				try {
-					we = driver.findElement(By.xpath("//input[@nme='q']"));
+					we = driver.findElement(By.xpath("//input[@name='q']"));
 				}catch(Exception e) {
 					report.reportSteps("Search Box - Google", "Failed");
 				}
@@ -61,7 +63,7 @@ public class Demo_Mobile {
 			e.printStackTrace();
 		}
 		finally {
-			driver.close();
+			driver.quit();
 		}
 	}
 	
