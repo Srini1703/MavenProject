@@ -178,7 +178,8 @@ public class FunctionalLibrary {
 		driver.switchTo().defaultContent();
 	}
 	
-	public void mouseOver() throws Exception{
+	public void mouseOver(WebElement we) throws Exception{
 		Actions a = new Actions(driver);
+		a.moveToElement(we).click().build().perform();
 	}
 }	

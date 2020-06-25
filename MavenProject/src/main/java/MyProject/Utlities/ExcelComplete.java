@@ -14,13 +14,13 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 public class ExcelComplete {
 	
 	@SuppressWarnings({ "resource", "deprecation" })
-	public ArrayList<HashMap<String,String>> readExcel() throws Exception{
+	public ArrayList<HashMap<String,String>> readExcel(String excelFile, String sheetName) throws Exception{
 		String heading="",key="";
 		ArrayList<HashMap<String,String>> arrMap = new ArrayList<HashMap<String,String>>();
-		FileInputStream fis = new FileInputStream("");
+		FileInputStream fis = new FileInputStream(excelFile);
 		//XSSFWorkbook wb1 = new XSSFWorkbook(fis);
 		HSSFWorkbook wb = new HSSFWorkbook(fis);
-		HSSFSheet sh = wb.getSheet("");
+		HSSFSheet sh = wb.getSheet(sheetName);
 		int rowCount = sh.getLastRowNum() - sh.getFirstRowNum();
 		for(int i=0;i<=rowCount;i++) {
 			HashMap<String,String> hm = new HashMap<String,String>();
