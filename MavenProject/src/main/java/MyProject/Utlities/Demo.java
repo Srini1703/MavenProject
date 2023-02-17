@@ -27,7 +27,7 @@ public class Demo {
 		String a ="HELLO WORLD";
 		char c1 = 0;
 		int count=1,highestCount=1;
-		
+		System.out.println();
 		for(int i=0;i<a.length();i++) {
 			for(int j=i+1;j<a.length();j++) {
 				if(a.charAt(i) == a.charAt(j)) {
