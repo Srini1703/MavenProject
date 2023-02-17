@@ -31,8 +31,7 @@ public class ReportStatus_Mobile {
 	
 	WebDriver driver;
 	public String browserName;
-	public static long overAllStartTime, overAllEndTime,overAllTime;
-	long oldTime,newTime, testStartTime, testEndTime;
+
 	int passCount=0,failCount=0;
 	static SimpleDateFormat sdf1 = new SimpleDateFormat("h:mm:ss a");
 	HashMap<String,String> data = new HashMap<String,String>();
@@ -110,8 +109,6 @@ public class ReportStatus_Mobile {
 		JSONObject JSAndroidJsonObject = new JSONObject();
 		JSONObject JSiOSjsonObject = new JSONObject();
 		this.browserName = data.get("platform");
-		oldTime = new Date().getTime();
-		testStartTime = oldTime;
 		if(data.get("platform").contains("ANDROID")) {
 			JSONArray AndroidstepJsonArray = new JSONArray();
 			JSAndroidJsonObject.put("TestCaseID", data.get("S_No"));
@@ -190,7 +187,7 @@ public class ReportStatus_Mobile {
 							else if(strStatus.equals("Failed"))
 								failCount++;
 							InputStream is = new FileInputStream(jsonFilePath+"/"+data.get("testId")+".json");
-							String jsonTxt = IOUtils.toString(is);
+							String jsonTxt = IOUtils.toString(is,"UTF-8");
 							JSONArray jsonTestArray = new JSONArray(jsonTxt);
 							JSONObject stepJsonArray = new JSONObject();
 							int currentStep = Integer.valueOf(AndroidjsonArray.getJSONObject(i).get("totalSteps").toString())+1;
@@ -202,8 +199,6 @@ public class ReportStatus_Mobile {
 							else if(strStatus.equals("Failed"))
 								stepJsonArray.put("Actual", "<font color='red'><b>"+elementName+"</b></font>"+" Icon is NOT available");
 							stepJsonArray.put("stepStatus", strStatus);
-							newTime = new Date().getTime();
-							oldTime = newTime;
 							File screenshot = getFileScreenShot();
 							imagePath= new File(currentExecutionPath.toString()+"/"+AndroidjsonArray.getJSONObject(i).get("testcasename")+"/"+stepJsonArray.get("sno")+".png");
 							FileUtils.copyFile(screenshot, imagePath);
@@ -245,8 +240,6 @@ public class ReportStatus_Mobile {
 							else if(strStatus.equals("Failed"))
 								stepJsonArray.put("Actual", "<font color='red'><b>"+elementName+"</b></font>"+" Icon is NOT available");
 							stepJsonArray.put("stepStatus", strStatus);
-							newTime = new Date().getTime();
-							oldTime = newTime;
 							File screenshot = getFileScreenShot();
 							imagePath= new File(currentExecutionPath.toString()+"/"+IosjsonArray.getJSONObject(i).get("testcasename")+"/"+stepJsonArray.get("sno")+".png");
 							FileUtils.copyFile(screenshot, imagePath);

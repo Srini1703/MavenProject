@@ -16,7 +16,7 @@ public class DataProvider {
 	WebDriver driver;
 	
 	@SuppressWarnings("rawtypes")
-	@org.testng.annotations.DataProvider(name="myTC")
+	@org.testng.annotations.DataProvider(name="myTC",parallel=true)
 	public Iterator<Object[]> getData(){
 		ArrayList<HashMap> arrHashMap = new ArrayList<HashMap>();
 		//ExcelData Object

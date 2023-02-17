@@ -140,12 +140,8 @@ function functionality(fltyORdetail){
 		pieEle.style.backgroundColor="";
 		var pie1 = document.getElementById('chartContainer');
 		pie1.style.display="none";
-		var pie2 = document.getElementById('iOSchartContainer');
-		pie2.style.display="none";
 		var ele = document.getElementById("detailedTable");
 		ele.style.display="none";
-		var Designteam = document.getElementById("designTeam");
-		Designteam.style.display="block";
 		var ele1 = document.getElementById(fltyORdetail);
 		ele1.style.display="block";
 		var tablink = document.getElementsByClassName('tablinks')[0].style.backgroundColor="Orange";
@@ -338,8 +334,6 @@ function pieChartReport(){
 	pieEle.style.backgroundColor="Orange";
 	var pie1 = document.getElementById('chartContainer');
 	pie1.style.display="block";
-	var pie2 = document.getElementById('iOSchartContainer');
-	pie2.style.display="block";
 	var myJson={};
 	$.getJSON('JSON/TotalDetails.json',function(data){
 		myJson = data;
@@ -363,51 +357,6 @@ function pieChartReport(){
 					{y:data[0].failedcase, label:"Failed Cases",color:"#CC1844"},
 					{y:data[0].pass, label:"Total Test Step Passed",color:"#67B01A"},
 					{y:data[0].fail, label:"Total Test Step Failed",color:"#1E90FF"},
-				]
-			}]
-		});
-		chart.render();
-	});
-}
-
-function iOSpieChartReport(){
-	var ele =document.getElementById('myTable');
-	ele.style.display="none";
-	document.getElementsByClassName('tablinks')[0].style.backgroundColor="";
-	var ele1 = document.getElementById('detailedTable');
-	ele1.style.display="none";
-	var DesignTeam = document.getElementById('designTeam');
-	DesignTeam.style.display="none";
-	document.getElementsByClassName('tablinks')[1].style.backgroundColor="";
-	var pieEle= document.getElementById('pieChartID');
-	pieEle.style.backgroundColor="Orange";
-	var pie1 = document.getElementById('chartContainer');
-	pie1.style.display="block";
-	var pie2 = document.getElementById('iOSchartContainer');
-	pie2.style.display="block";
-	var myJson={};
-	$.getJSON('JSON/TotalDetails.json',function(data){
-		myJson = data;
-		var chart = new CanvasJS.Chart("iOSchartContainer",{
-			animationEnabled: true,
-			backgroundColor: "rgba(210,206,200,1)",
-			title:{
-				text:"IOS",
-				fontFamily: "TimesNewRoman",
-				fontColor: "Blue",
-				fontStyle: "italics",
-				fontWeight: "bold",
-			},
-			data: [{
-				type: "pie",
-				startAngle: 175,
-				indexLabelFontSize: 14,
-				indexLabel: "{label} {y}",
-				dataPoints:[
-					{y:data[0].iOSpassedcase, label:"Passed Cases",color:"DarkGreen"},
-					{y:data[0].iOSfailedcase, label:"Failed Cases",color:"#CC1844"},
-					{y:data[0].iOSpass, label:"Total Test Step Passed",color:"#67B01A"},
-					{y:data[0].iOSfail, label:"Total Test Step Failed",color:"#1E90FF"},
 				]
 			}]
 		});

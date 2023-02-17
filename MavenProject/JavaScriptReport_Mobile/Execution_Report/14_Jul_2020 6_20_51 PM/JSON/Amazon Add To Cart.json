@@ -1,0 +1,83 @@
+[
+	{
+		"Expected": "<font color='blue'><b>Language Selection Icon<\/b><\/font> should be available",
+		"Description": "Validation of icon <font color='blue'><b>Language Selection<\/b><\/font>",
+		"sno": 1,
+		"testcasename": "Amazon Add To Cart",
+		"Screenshot": "Demo Run_1/1.png",
+		"Actual": "<font color='blue'><b>Language Selection Icon<\/b><\/font> Icon is available",
+		"stepStatus": "Passed"
+	},
+	{
+		"Expected": "<font color='blue'><b>Skip Sign IN Icon<\/b><\/font> should be available",
+		"Description": "Validation of icon <font color='blue'><b>Skip Sign IN Icon<\/b><\/font>",
+		"sno": 2,
+		"testcasename": "Amazon Add To Cart",
+		"Screenshot": "Demo Run_1/2.png",
+		"Actual": "<font color='blue'><b>Skip Sign IN Icon<\/b><\/font> Icon is available",
+		"stepStatus": "Passed"
+	},
+	{
+		"Expected": "<font color='blue'><b>input_SearchBox<\/b><\/font> should be available",
+		"Description": "Validation of icon <font color='blue'><b>input_SearchBox<\/b><\/font>",
+		"sno": 3,
+		"testcasename": "Amazon Add To Cart",
+		"Screenshot": "Demo Run_1/3.png",
+		"Actual": "<font color='blue'><b>input_SearchBox<\/b><\/font> Icon is available",
+		"stepStatus": "Passed"
+	},
+	{
+		"Expected": "<font color='blue'><b>Mask Icon<\/b><\/font> should be available",
+		"Description": "Validation of icon <font color='blue'><b>Mask Icon<\/b><\/font>",
+		"sno": 4,
+		"testcasename": "Amazon Add To Cart",
+		"Screenshot": "Demo Run_1/4.png",
+		"Actual": "<font color='blue'><b>Mask Icon<\/b><\/font> Icon is available",
+		"stepStatus": "Passed"
+	},
+	{
+		"Expected": "<font color='blue'><b>Message App Launch Validation<\/b><\/font> should be available",
+		"Description": "Validation of icon <font color='blue'><b>Message App Launch Validation<\/b><\/font>",
+		"sno": 1,
+		"testcasename": "Amazon Add To Cart",
+		"Screenshot": "Demo Run_1/1.png",
+		"Actual": "<font color='blue'><b>Message App Launch Validation<\/b><\/font> Icon is available",
+		"stepStatus": "Passed"
+	},
+	{
+		"Expected": "<font color='blue'><b>Message App Launch Validation<\/b><\/font> should be available",
+		"Description": "Validation of icon <font color='blue'><b>Message App Launch Validation<\/b><\/font>",
+		"sno": 1,
+		"testcasename": "Amazon Add To Cart",
+		"Screenshot": "Demo Run_1/1.png",
+		"Actual": "<font color='blue'><b>Message App Launch Validation<\/b><\/font> Icon is available",
+		"stepStatus": "Passed"
+	},
+	{
+		"Expected": "<font color='blue'><b>Message App Launch Validation<\/b><\/font> should be available",
+		"Description": "Validation of icon <font color='blue'><b>Message App Launch Validation<\/b><\/font>",
+		"sno": 1,
+		"testcasename": "Amazon Add To Cart",
+		"Screenshot": "Demo Run_1/1.png",
+		"Actual": "<font color='blue'><b>Message App Launch Validation<\/b><\/font> Icon is available",
+		"stepStatus": "Passed"
+	},
+	{
+		"Expected": "<font color='blue'><b>Message App Launch Validation<\/b><\/font> should be available",
+		"Description": "Validation of icon <font color='blue'><b>Message App Launch Validation<\/b><\/font>",
+		"sno": 1,
+		"testcasename": "Amazon Add To Cart",
+		"Screenshot": "Demo Run_1/1.png",
+		"Actual": "<font color='blue'><b>Message App Launch Validation<\/b><\/font> Icon is available",
+		"stepStatus": "Passed"
+	},
+	{
+		"Expected": "<font color='blue'><b>Message App Launch Validation<\/b><\/font> should be available",
+		"Description": "Validation of icon <font color='blue'><b>Message App Launch Validation<\/b><\/font>",
+		"sno": 1,
+		"testcasename": "Amazon Add To Cart",
+		"Screenshot": "Demo Run_1/1.png",
+		"Actual": "<font color='blue'><b>Message App Launch Validation<\/b><\/font> Icon is available",
+		"stepStatus": "Passed"
+	}
+]

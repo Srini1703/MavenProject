@@ -24,7 +24,7 @@ public class Demo {
 
 	public static void main(String[] args) throws Exception {
 		
-		/*String a ="HELLO WOOORLD";
+		String a ="HELLO WORLD";
 		char c1 = 0;
 		int count=1,highestCount=1;
 		
@@ -40,12 +40,12 @@ public class Demo {
 			}
 			count=1;
 		}
-		System.out.println(c1);*/
-		DesiredCapabilities dc = new DesiredCapabilities();
+		System.out.println(c1);
+		/*DesiredCapabilities dc = new DesiredCapabilities();
 		dc.setBrowserName("chrome");
 		WebDriver driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), dc);
 		Alert a = driver.switchTo().alert();
-		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(50, TimeUnit.SECONDS);*/
 		
 		
 		

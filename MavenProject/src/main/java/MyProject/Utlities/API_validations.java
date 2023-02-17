@@ -3,6 +3,7 @@ package MyProject.Utlities;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.http.HttpStatus;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -29,8 +30,8 @@ public class API_validations {
 		List<String> li = new ArrayList<String>();
 		try {
 			restTemplate = new RestTemplate();
-			String vzid="srini1106";
-			String jsonRequest=vzid+" and mandatory values";
+			String userID="srini1106";
+			String jsonRequest=userID+" and mandatory values";
 			headers = new HttpHeaders();
 			headers.setContentType(MediaType.APPLICATION_JSON);
 			entity = new HttpEntity<String>(jsonRequest,headers);

@@ -63,7 +63,7 @@ public class Demo_Mobile {
 			e.printStackTrace();
 		}
 		finally {
-			driver.quit();
+			driver.close();
 		}
 	}
 	

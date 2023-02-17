@@ -3,9 +3,15 @@
 }
 
 div.allBody{
-	width:1900px;
+	/* width:1900px; */
 	height: auto;
 	margin: 0px auto;
+}
+
+#h2ID1{
+	text-align:center;
+	/* border:1px solid black; */
+	/* width: 350px; */
 }
 
 #h2ID{
@@ -13,8 +19,8 @@ div.allBody{
 	margin-left:auto;
 	margin-right:auto;
 	margin-top:20px;
-	border:1px solid black;
-	width: 350px;
+	/* border:1px solid black; */
+	/* width: 350px; */
 }
 
 input{
@@ -22,24 +28,39 @@ input{
 	cursor:pointer;
 }
 
+.column {
+  float: left;
+  width: 30.00%;
+ /*  padding: 8px;
+  height: 50px;  *//* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 ul.ExecutionTimeDetails{
+	display: inline-block;
 	margin-top: -120px;
 	float:right;
 	margin-right:155px;
-	font-size:155%
+	/* font-size:155% */
 }
 
 ul.testCaseDetails{
 	margin-left:120px;
 	line-height: 1.5em;
-	font-size:135%
+	/* font-size:135% */
 }
 img.projectLogo{
 	margin-top: -20px;
 	margin-right: 200px;
 	float:right;
 	height:50px;
-	width:50px;
+	/* width:50px; */
 }
 
 img.companyLogo{
@@ -51,11 +72,14 @@ img.companyLogo{
 }
 
 img.seleniumImage{
-	float:right;
-	margin-right: 635px;
+	display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width:320px;
+	/* margin-right: 635px;
 	height:150px;
 	width:150px;
-	max-width:320px;
+	max-width:320px; */
 }
 input.android{
 	margin-left:800px;
@@ -69,7 +93,7 @@ input.ios{
 	margin-left:auto;
 	margin-right:auto;
 	font-family:Verdana;
-	width:350px;
+	/* width:350px; */
 	table-layout:auto;
 }
 
@@ -80,14 +104,14 @@ input.ios{
 
 #myTable{
 	border: 1px solid black;
-	width: 1800px;
+	/* width: 1800px; */
 	margin-left: 30px;
 }
 
 #detailedTable{
 	table-layout:auto;
 	border: 1px solid black;
-	width: 1800px;
+	/* width: 1800px; */
 	margin-left: 20px;
 	display:none;
 }
@@ -98,9 +122,9 @@ td{
 	padding:10px;
 	border:1px solid black;
 	margin-left: 25px;
-	width:1800px;
+	/* width:1800px; */
 	text-align:left;
-	font-size:22px;
+	font-size:16px;
 }
 tr:hover{
 	background-color:rgba(138,138,225,0.4);
@@ -108,7 +132,7 @@ tr:hover{
 
 .tablinks{
 	margin-left:25px;
-	font-size:22px;
+	/* font-size:22px; */
 }
 
 .modal{
@@ -145,7 +169,7 @@ tr:hover{
 	margin:auto;
 	display:block;
 	width:80%;
-	max-width:1800px;
+	/* max-width:1800px; */
 }
 
 #chartContainer,
