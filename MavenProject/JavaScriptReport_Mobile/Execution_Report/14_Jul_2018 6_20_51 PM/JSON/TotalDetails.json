@@ -1,0 +1,22 @@
+[
+	{
+		"pass": 0,
+		"OverallFail": 0,
+		"totalcase": 1,
+		"OverallPass": 0,
+		"passedcase": 0,
+		"OverallTotalCase": 1,
+		"iOSpassedcase": 0,
+		"fail": 0,
+		"total": 1,
+		"OverallPassedCase": 0,
+		"OverallFailedCase": 1,
+		"iOSfail": 0,
+		"OverallTotal": 1,
+		"iOSfailedcase": 0,
+		"iOStotal": 0,
+		"iOStotalcase": 0,
+		"failedcase": 0,
+		"iOSpass": 0
+	}
+]

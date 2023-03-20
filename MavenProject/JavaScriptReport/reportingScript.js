@@ -131,7 +131,7 @@ function functionality(fltyORdetail){
 }
 
 function readTable(){
-	var result="";var tr=null;var td1 = null;var text1=null;
+	let result="";var tr=null;var td1 = null;var text1=null;
 	var descriptionEle=null;var descriptionText=null;var descriptionCell=null;var SnoCell=null;
 	var ExpResultEle=null;var ExpResultText=null;var ExpResultCell=null;
 	var StepStatusEle=null;var StepStatusText=null;var StepStatusCell=null;

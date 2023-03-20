@@ -14,8 +14,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.google.common.base.Function;
 
@@ -51,7 +53,13 @@ public class FunctionalLibrary {
 
 		}
 	}
-
+	
+	WebDriverWait webDriverWait(WebElement we) {
+		WebDriverWait wait = new WebDriverWait(driver, 90);
+		wait.until(ExpectedConditions.visibilityOf(we));
+		return wait;
+	}
+	
 	WebElement findWebElement(String methodname, String ORkey) throws Exception {
 		System.out.println("");
 		WebElement element = null;
@@ -59,7 +67,8 @@ public class FunctionalLibrary {
 		try {
 			System.out.println("Get Element Started for the Method " + methodname + "-- " + value);
 			FluentWait<WebDriver> fWait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
-					.pollingEvery(Duration.ofMillis(500)).ignoring(NoSuchElementException.class)
+					.pollingEvery(Duration.ofMillis(500))
+					.ignoring(NoSuchElementException.class)
 					.ignoring(TimeoutException.class);
 
 			element = fWait.until(new Function<WebDriver, WebElement>() {
@@ -174,11 +183,28 @@ public class FunctionalLibrary {
 	}
 
 	public void highlightElement(WebDriver driver, WebElement element) {
-		((JavascriptExecutor)driver).executeScript("arguments[0].style.border='3px solid blue'", element);
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		js.executeScript("arguments[0].style.border='3px solid blue'", element);
 	}
 
 	public void mouseOver(WebElement we) throws Exception {
 		Actions a = new Actions(driver);
 		a.moveToElement(we).click().build().perform();
+	}
+	
+	public void mouseOverUsingJS (WebElement we)throws Exception{
+		try {
+			String mouseOverScript = "if(document.createEvent) {"
+					+ "var evObj = document.createEvent('MouseEvents');"
+					+ "evObj.initEvent('mouseover', true, false); arguments[0].dispatchEvent(evObj);"
+					+ "} "
+					+ "else if(document.createEventObject) { "
+					+ "arguments[0].fireEvent('onmouseover');"
+					+ "}";
+				((JavascriptExecutor) driver).executeScript(mouseOverScript,
+						we);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

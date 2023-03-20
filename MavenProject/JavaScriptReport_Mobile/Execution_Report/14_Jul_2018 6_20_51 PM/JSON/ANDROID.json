@@ -1,0 +1,11 @@
+[
+	{
+		"failCount": 1,
+		"testcasename": "Amazon Add To Cart",
+		"totalSteps": 9,
+		"TestCaseID": "1",
+		"platform": "ANDROID",
+		"passCount": 8,
+		"status": "Failed"
+	}
+]
