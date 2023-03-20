@@ -258,6 +258,7 @@ function DeleteTable(){
 	}
 }
 
+
 function executionDetails(start,end){
 	var listDetails = document.getElementsByTagName('li');
 	$.getJSON('JSONfolder/executionTime.json',function(values){

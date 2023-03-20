@@ -9,7 +9,7 @@ import java.util.List;
 public class Pract {
 
 	public static void main(String[] args) {
-		int m=0;
+		/*int m=0;
 		ArrayList<String> list = new ArrayList<>();
 		list.add("a");list.add("e");list.add("i");list.add("o");list.add("u");
 		list.add("A");list.add("E");list.add("I");list.add("O");list.add("U");
@@ -32,10 +32,10 @@ public class Pract {
 			}
 		}
 		String string = new String(ch);
-		System.out.println(string);
+		System.out.println(string);*/
 		
 		
-		/*String overall="";
+		String overall="";
 		String arr[] = {"Daisy", "Rose", "Hyacinth", "Poppy"};
 		List<String> list= Arrays.asList(arr);
 		String longestWord = list.stream().max(Comparator.comparingInt(String::length)).get();
@@ -48,7 +48,7 @@ public class Pract {
 				}
 			}
 		}
-		System.out.println(overall);*/
+		System.out.println(overall);
 	}
 
 }
