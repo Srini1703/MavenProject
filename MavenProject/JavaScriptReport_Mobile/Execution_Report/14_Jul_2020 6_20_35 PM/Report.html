@@ -24,8 +24,7 @@
 				</script></li>
 			</ul>
 				<div class="column">
-					<img class="seleniumImage"
-				src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Selenium_Logo.png">
+					<img class="seleniumImage" src="https://upload.wikimedia.org/wikipedia/en/thumb/f/fe/Lloyds_Banking_Group_logo.svg/220px-Lloyds_Banking_Group_logo.svg.png">
 				</div>
 					<ul class="column" style="margin-left:40px">
 				<li>Total Test Cases Executed: <script>
@@ -61,53 +60,53 @@
 			</div>
 			<br>
 			<table id="myTable">
+			<thead>
 				<tr>
 					<td
 						style="width: 10%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">S.NO</td>
 					<td
-						style="width: 40%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">Test
-						Case Name</td>
+						style="width: 40%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">TestCase Name</td>
 					<td
 						style="width: 10%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">Platform</td>
 					<td
-						style="width: 10%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">Total
-						Test Steps</td>
+						style="width: 10%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">TotalTest Steps</td>
 					<td
-						style="width: 10%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">Total
-						Passed</td>
+						style="width: 10%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">TotalPassed</td>
 					<td
-						style="width: 10%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">Total
-						Failed</td>
+						style="width: 10%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">TotalFailed</td>
 					<td
 						style="width: 10%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">Status</td>
-					<script>
+					
+				</tr>
+				</thead>
+				<tbody id="tableMainBody">
+                        </tbody>
+                        <script>
 						dynamicTable('android');
 					</script>
-				</tr>
 			</table>
 
 			<table id="detailedTable">
+			<thead>
 				<tr>
 					<td
 						style="width: 5%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">S.NO</td>
 					<td
 						style="width: 20%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">Description</td>
 					<td
-						style="width: 20%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">Expected
-						Result</td>
+						style="width: 20%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">ExpectedResult</td>
 					<td
-						style="width: 20%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">Actual
-						Result</td>
+						style="width: 20%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">ActualResult</td>
 					<td
-						style="width: 5%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">Step
-						Status</td>
-					<td
-						style="width: 5%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">Screenshot</td>
-					<script>
-						readTable();
-					</script>
+						style="width: 5%; text-align: center; background-color: rgba(0, 140, 140, 0.5);">StepStatus</td>
 				</tr>
-			</table>
+				</thead>
+                        <tbody id="tablebody">
+                        </tbody>
+                        <script>
+                        readTable();
+					</script>
+                </table>
 			<br>
 
 			<div id="myModal" class="modal">

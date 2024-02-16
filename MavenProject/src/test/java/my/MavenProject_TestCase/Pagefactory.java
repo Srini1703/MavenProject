@@ -24,14 +24,14 @@ public class Pagefactory {
 			opts.addArguments("--start-maximized");
 			driver = new ChromeDriver();
 			driver.get("https://www.amazon.in/");
-			//Pagefactory pf = Pagefactory.initialize(driver);
+			Pagefactory pf = Pagefactory.initialize(driver);
 			WebElement dropDown = driver.findElement(By.xpath("//div[@id='nav-search-dropdown-card']/descendant::select"));
 			Select sel = new Select(dropDown);
 			List<WebElement> list = sel.getOptions();
 			for(WebElement we:list) {
 				System.out.println(we.getAttribute("textContent"));
 			}
-			//pf.click();
+			pf.click();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}

@@ -66,7 +66,8 @@ public class FunctionalLibrary {
 		String value = OR_Reader.getOR(ORkey);
 		try {
 			System.out.println("Get Element Started for the Method " + methodname + "-- " + value);
-			FluentWait<WebDriver> fWait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofSeconds(10))
+			FluentWait<WebDriver> fWait = new FluentWait<WebDriver>(driver)
+					.withTimeout(Duration.ofSeconds(10))
 					.pollingEvery(Duration.ofMillis(500))
 					.ignoring(NoSuchElementException.class)
 					.ignoring(TimeoutException.class);
