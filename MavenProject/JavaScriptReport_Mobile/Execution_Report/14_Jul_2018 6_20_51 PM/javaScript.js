@@ -130,7 +130,8 @@ function appendRow(values) {
     newRow.append("<td>" + values.sno + "</td>");
     newRow.append("<td>" + values.Description + "</td>");
     newRow.append("<td>" + values.Expected + "</td>");
-    newRow.append("<td style='white-space: nowrap; overflow: scroll;height: 100px; max-width: 100px;'>" + values.Actual + "</td>");
+    //newRow.append("<td style='white-space: nowrap; overflow: scroll;height: 100px; max-width: 100px;'>" + values.Actual + "</td>");
+    newRow.append("<td>" + values.Actual + "</td>");
     newRow.append("<td>" + values.stepStatus + "</td>");
 
     // Create and append the screenshot cell
